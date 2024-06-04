@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77aaff 3px solid;
+}
+
+header .logo h1 {
+    float: left;
+    margin-top: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    float: left;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-buttons {
+    float: right;
+}
+
+.login-buttons button {
+    background: #77aaff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.login-buttons button:hover {
+    background: #0056b3;
+}
+
+.hero {
+    background: url('images/pexels-technobulka-2908984.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+section {
+    padding: 20px 0;
+}
+
+section#about,
+section#contact {
+    background: #f4f4f4;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+section p,
+section form,
+section .interactive-images {
+    margin-bottom: 20px;
+}
+
+section .interactive-images img {
+    width: 30%;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+section .interactive-images img:hover {
+    transform: scale(1.05);
+}
+
+#contact .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-form,
+.website-maker-info {
+    width: 45%;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: darkolivegreen;
+        height:55%;
+   
+ 
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background: #77aaff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+footer {
+    background: #333;
+    color:rgb(110, 58, 177);
+    text-align: center;
+    padding: 20px 0;
+    clear: both;
+}
+
+footer .quick-links,
+footer .contact-info {
+    margin-bottom: 20px;
+    color:black;
+}
+
+footer ul {
+    list-style: none;
+    color:black;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+    color:black;
+}
+
+footer
+ {
+    display: inline;
+    margin: 0 10px;
+    color:black;
+}
+
+footer ul li a {
+    color:blue;
+    text-decoration: none;
+}
+footer h3{
+    color: red;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="indexstyle.css">
+    
+    <script>
+        function openModal(type) {
+            document.getElementById(type + '-modal').style.display = 'block';
+        }
+
+        function closeModal(type) {
+            document.getElementById(type + '-modal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1> Library Management </h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="login-buttons">
+                  <a href="oldstudentlogin.jsp"><button>User Login</button></a>
+                    <a href="index2.html"><button>Admin  Login</button></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to Our Library</h2>
+            <p>Explore a world of knowledge</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us :</h2>
+            <p>Welcome to Central Library , a place where knowledge meets community. Our mission is to provide access to a wealth of information and resources for all.</p>
+            <p>Central Library is a community-focused library dedicated to fostering lifelong learning and promoting a love for literature. Located in Bhubaneswar, our mission is to provide accessible resources for all ages. Our extensive collection includes physical books and student service. Our friendly staff assists with research, recommendations, and reference services. Join us for author talks, workshops, and reading challenges. At 	Central Library,Bhubaneswar, we believe in equal access to information, creating a welcoming space for everyone. Explore knowledge, connect with fellow book lovers, and embark on your learning journey with us. 📚🌟</p><br>
+            
+                          <p>“Our mission is to promote information and digital literacy to all students, staff, and the community. Through collaboration, research, and critical thinking, students will become proficient learners in accessing information in the 21st century.”</p>
+            <div class="interactive-images">
+                <img src="images/young-student-working-assignment.jpg" alt="Library Image 1">
+                <img src="images/teenager-taking-book-from-bookshelf.jpg" alt="Library Image 2">
+                <img src="images/handsome-guy-study-library.jpg" alt="Library Image 3">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="website-maker-info">
+                    <h2>Features		</h2>
+                    <p><strong>Experience the future of reading with our state-of-the-art e-library, designed to transform the way you access and enjoy literature. Our e-library boasts a vast digital collection, including e-books, audiobooks, journals, and multimedia resources, all available at your fingertips. Whether you’re searching by author, genre, publication date, or keyword, our advanced search and filter capabilities ensure you find exactly what you need quickly and efficiently. Personalized recommendations based on your reading history and preferences make discovering new favorites a breeze, enriching your reading experience</strong></p>
+                </div>
+                <div class="contact-form">
+                    <h2>Any Query ?</h2>
+                    <form action="UserQuery" method="post">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write what you want ???" required 
+                        style="width: 100%; height: 100px; border: 1px solid #ccc; padding: 10px; border-radius: 5px;"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+                <p>Email: priyanshumeher@gmail.com</p>
+                <p>Phone: 993-8778-192</p>
+                <p>Address: Bhubaneswar</p>
+            </div>
+        </div>
+    </footer>
+
+  
+</body>
+</html>

@@ -1,0 +1,104 @@
+<nav class="navbar">
+    <div class="container">
+        <h1 class="logo">Student Dashboard</h1>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('issued-books')">Issued Books</a></li>
+            <li><a href="#" onclick="showSection('return-books')">Return Books</a></li>
+            <li><a href="#" onclick="showSection('total-books')">View Total Books Available</a></li>
+            <li><a href="#" onclick="showSection('profile')">Profile</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="issued-books" class="issued-books hidden">
+        <h2>Issued Books</h2>
+        <%
+            ArrayList<String> callno_list = new ArrayList<>();
+            ArrayList<String> issuedate_list = new ArrayList<>();
+            String query1 = "SELECT * FROM e_issuebook WHERE studentid =" + lib_id;
+            try {
+                Connection con = DB.getCon();
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(query1);
+                while (rs.next()) {
+                    callno_list.add(rs.getString("callno"));
+                    issuedate_list.add(rs.getString("issued_date"));
+                }
+                if (callno_list.isEmpty()) {
+        %>
+                    <h2>YOU HAVE NOT ISSUED ANY BOOK FROM THE LIBRARY</h2>
+
+    </div>
+
+    <div id="dashboard" class="dashboard">
+        <h2>Welcome to Your Dashboard</h2>
+        <p>Here you can view your issued books, return books, and update your profile.</p>
+    </div>
+
+    <div id="profile" class="profile hidden">
+        <h2>Profile</h2>
+        <p><strong>Unique Lib Card No:</strong> <%= lib_id %></p>
+        <p><strong>Student Name:</strong> <%= name %></p>
+        <p><strong>Student Email:</strong> <%= email %></p>
+        <p><strong>Student Enrollment Number:</strong> 1234567890</p>
+        <p><strong>Student Department:</strong> Computer Science</p>
+    </div>	
+
+    <div id="return-books" class="return-books hidden">
+        <h2>Return Books</h2>
+        <ul>
+            <li>
+                <h4>Book 3: "The Hitchhiker's Guide to the Galaxy" by Douglas Adams</h4>
+                <p>Return date: 05-03-2023</p>
+            </li>
+            <li>
+                <h4>Book 4: "The Nightingale" by Kristin Hannah</h4>
+                <p>Return date: 10-03-2023</p>
+            </li>
+        </ul>
+    </div>
+
+    <div id="total-books" class="total-books hidden">
+        <h2>Total Books Available</h2>
+        <%
+            List<BookBean> list = BookDao.view();
+        %>
+        <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+            <thead>
+                <tr style="background-color: #f2f2f2; text-align: left;">
+                    <th style="border: 1px solid #ddd; padding: 8px;">Callno</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Name</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Author</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Publisher</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Available Pieces</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                for (BookBean bean : list) {
+                    int available = bean.getQuantity() - bean.getIssued();
+                %>
+                <tr style="transition: background-color 0.3s;">
+                    <td style="border: 1px solid #ddd; padding: 8px;"><%= bean.getCallno() %></td>
+                    <td style="border: 1px solid #ddd; padding: 8px;"><%= bean.getName() %></td>
+                    <td style="border: 1px solid #ddd; padding: 8px;"><%= bean.getAuthor() %></td>
+                    <td style="border: 1px solid #ddd; padding: 8px;"><%= bean.getPublisher() %></td>
+                    <td style="border: 1px solid #ddd; padding: 8px;"><%= available %></td>
+                </tr>
+                <%
+                }
+                %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.container > div');
+        sections.forEach(section => section.classList.add('hidden'));
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+</script>

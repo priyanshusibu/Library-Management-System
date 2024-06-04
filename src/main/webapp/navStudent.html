@@ -1,0 +1,62 @@
+<nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Student Dashboard</h1>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showSection('issued-books')">Issued Books</a></li>
+                <li><a href="#" onclick="showSection('return-books')">Return Books</a></li>
+                <li><a href="#" onclick="showSection('total-books')">View Total Books Available</a></li>
+                <li><a href="#" onclick="showSection('profile')">Profile</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="dashboard" class="dashboard">
+            <h2>Welcome to Your Dashboard</h2>
+            <p>Here you can view your issued books, return books, and update your profile.</p>
+        </div>
+        <div class="profile">
+            <h2>Profile</h2>
+            <p><strong>Student Name:</strong><%=student.getName()%></p>  
+            <p><strong>Student Email:</strong><%=student.getEmail() %></p>
+            <p><strong>Student Enrollment Number:</strong> 1234567890</p>
+            <p><strong>Student Department:</strong> Computer Science</p>
+            <!--  <button>Edit Profile</button>-->
+        </div>
+        <div id="issued-books" class="issued-books hidden">
+            <h2>Issued Books</h2>
+            <ul>
+                <li>
+                    <div class="book-placeholder"></div>
+                    <h4>Book 1: "The Alchemist" by Paulo Coelho</h4>
+                    <p>Issued on: 12-02-2023</p>
+                    <p>Due date: 26-02-2023</p>
+                </li>
+                <li>
+                    <div class="book-placeholder"></div>
+                    <h4>Book 2: "To Kill a Mockingbird" by Harper Lee</h4>
+                    <p>Issued on: 15-02-2023</p>
+                    <p>Due date: 29-02-2023</p>
+                </li>
+            </ul>
+        </div>
+        <div id="return-books" class="return-books hidden">
+            <h2>Return Books</h2>
+            <ul>
+                <li>
+                    <div class="book-placeholder"></div>
+                    <h4>Book 3: "The Hitchhiker's Guide to the Galaxy" by Douglas Adams</h4>
+                    <p>Return date: 05-03-2023</p>
+                </li>
+                <li>
+                    <div class="book-placeholder"></div>
+                    <h4>Book 4: "The Nightingale" by Kristin Hannah</h4>
+                    <p>Return date: 10-03-2023</p>
+                </li>
+            </ul>
+        </div>
+        <div id="total-books" class="total-books hidden">
+            <h2>Total Books Available</h2>
+            <p>Display the total books available here.</p>
+        </div>
+    </div>
